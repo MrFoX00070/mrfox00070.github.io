@@ -1,14 +1,13 @@
 ---
 layout: default
 ---
-<a class="back" href="{{ '/blog/' | relative_url }}">← 記事一覧へ戻る</a>
-<article class="article">
-  <header class="article-header">
-    <div class="eyebrow">TECHNICAL NOTES · {{ page.date | date: '%Y.%m.%d' }}</div>
-    <h1>{{ page.title | escape }}</h1>
-    {% if page.description %}<p class="lede">{{ page.description | escape }}</p>{% endif %}
-    {% if page.tags.size > 0 %}<div class="tags">{% for tag in page.tags %}<span class="tag">{{ tag | escape }}</span>{% endfor %}</div>{% endif %}
-  </header>
-  <div class="prose">{{ content }}</div>
+{% assign current_lang = page.lang | default: 'ja' %}
+<div class="breadcrumbs"><a href="{{ '/' | append: current_lang | append '/' | relative_url }}">Home</a><span>/</span><a href="{{ '/' | append: current_lang | append '/notes/' | relative_url }}">Security Notes</a><span>/</span><span>{{ page.title }}</span></div>
+<article class="post-article">
+  <div class="eyebrow"><span class="eyebrow-line"></span> {{ page.note_type | upcase }} · {{ page.date | date: '%Y.%m.%d' }}</div>
+  <h1>{{ page.title }}</h1>
+  {% if page.description %}<p class="page-intro">{{ page.description }}</p>{% endif %}
+  <div class="post-tags">{% for tag in page.tags %}<span class="chip">{{ tag }}</span>{% endfor %}</div>
+  <div class="post-body">{{ content }}</div>
+  <a class="back-link" href="{{ '/' | append: current_lang | append '/notes/' | relative_url }}">← Security Notes</a>
 </article>
-<a class="back bottom" href="{{ '/blog/' | relative_url }}">← すべての記事</a>

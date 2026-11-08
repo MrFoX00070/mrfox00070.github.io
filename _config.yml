@@ -1,11 +1,24 @@
-title: "MrFoX00070 | Cybersecurity Portfolio"
-description: "SOC・インシデントレスポンスを目指す専門学校生の技術ブログ"
+title: MrFoX00070
+email: "mrfox00070.contact@gmail.com" # Public email for the site and business card.
+description: "Security student interested in SOC, incident response and hands-on learning."
 url: "https://mrfox00070.github.io"
 baseurl: ""
-lang: "ja"
-timezone: "Asia/Tokyo"
+github_username: "MrFoX00070"
 markdown: kramdown
-permalink: /blog/:year/:month/:day/:title/
+highlighter: rouge
+timezone: Asia/Tokyo
 exclude:
   - README.md
-  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - .gitignore
+  - .github
+  - vendor
+  - node_modules
+# Public notes are written in _posts. Drafts only appear with `jekyll serve --drafts`.
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
