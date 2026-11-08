@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<a class="back" href="{{ '/blog/' | relative_url }}">← 記事一覧へ戻る</a>
+<article class="article">
+  <header class="article-header">
+    <div class="eyebrow">TECHNICAL NOTES · {{ page.date | date: '%Y.%m.%d' }}</div>
+    <h1>{{ page.title | escape }}</h1>
+    {% if page.description %}<p class="lede">{{ page.description | escape }}</p>{% endif %}
+    {% if page.tags.size > 0 %}<div class="tags">{% for tag in page.tags %}<span class="tag">{{ tag | escape }}</span>{% endfor %}</div>{% endif %}
+  </header>
+  <div class="prose">{{ content }}</div>
+</article>
+<a class="back bottom" href="{{ '/blog/' | relative_url }}">← すべての記事</a>

@@ -1,0 +1,11 @@
+title: "MrFoX00070 | Cybersecurity Portfolio"
+description: "SOC・インシデントレスポンスを目指す専門学校生の技術ブログ"
+url: "https://mrfox00070.github.io"
+baseurl: ""
+lang: "ja"
+timezone: "Asia/Tokyo"
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+exclude:
+  - README.md
+  - LICENSE

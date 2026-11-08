@@ -1,0 +1,31 @@
+---
+layout: default
+title: Blog
+description: "セキュリティ学習・検証・競技参加の技術記録"
+permalink: /blog/
+---
+<section class="hero">
+  <div class="eyebrow">MRFOX00070 / TECHNICAL JOURNAL</div>
+  <h1>Security <span>Notes.</span></h1>
+  <p>セキュリティ技術の学習記録、検証環境での実験、競技で得た学びをまとめています。SOC / Incident Response を中心に、学んだことを自分の言葉で整理しています。</p>
+</section>
+<section class="listing" aria-label="ブログ記事">
+  <div class="section-title"><span>01 / ARTICLES</span><h2>記事一覧</h2></div>
+  {% if site.posts.size > 0 %}
+    <div class="posts">
+      {% for post in site.posts %}
+      <a class="post-card" href="{{ post.url | relative_url }}">
+        <div class="date">{{ post.date | date: '%Y.%m.%d' }} {% if post.categories.size > 0 %} · {{ post.categories | join: ' / ' | escape }}{% endif %}</div>
+        <h3>{{ post.title | escape }} <span aria-hidden="true">↗</span></h3>
+        {% if post.description %}<p>{{ post.description | escape }}</p>{% else %}<p>{{ post.excerpt | strip_html | truncate: 160 }}</p>{% endif %}
+        {% if post.tags.size > 0 %}<div class="tags">{% for tag in post.tags %}<span class="tag">{{ tag | escape }}</span>{% endfor %}</div>{% endif %}
+      </a>
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="empty">
+      <h3>記事は準備中です</h3>
+      <p>学んだ技術や検証結果を、公開できる範囲で順次まとめていきます。</p>
+    </div>
+  {% endif %}
+</section>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1019">
+  <meta name="description" content="{{ page.description | default: site.description | escape }}">
+  <title>{% if page.title %}{{ page.title | escape }} | {% endif %}MrFoX00070</title>
+  <link rel="stylesheet" href="{{ '/assets/blog.css' | relative_url }}">
+</head>
+<body>
+  <div class="container">
+    <nav class="header" aria-label="Main navigation">
+      <a href="{{ '/' | relative_url }}" class="brand">MRFOX<span>00070</span></a>
+      <div class="links"><a href="{{ '/' | relative_url }}">Portfolio</a><a href="{{ '/blog/' | relative_url }}">Blog</a><a href="https://github.com/mrfox00070" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+    </nav>
+    <main>{{ content }}</main>
+    <footer>© {{ 'now' | date: '%Y' }} MrFoX00070 · <a href="{{ '/' | relative_url }}">Portfolio</a> · Powered by GitHub Pages &amp; Jekyll</footer>
+  </div>
+</body>
+</html>
